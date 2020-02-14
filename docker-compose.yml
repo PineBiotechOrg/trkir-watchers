@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  experiment_watcher:
+    env_file:
+      - docker/.env
+    build:
+      context: .
+      dockerfile: experiments/docker/Dockerfile
+    restart: always
+    network_mode: "host"
